@@ -16,8 +16,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-        <module>spring-user-swagger-codegen-api-client</module>
-        <module>spring-user-swagger-codegen-app</module>
+        <module>spring-swagger-codegen</module>
+        <module>exam</module>
     </modules>
 
 </project>
