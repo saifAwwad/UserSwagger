@@ -1,0 +1,479 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Optube User API",
+    "description": "API description in User optube.",
+    "version": "1.0.0"
+  },
+  "host": "api.optube.com",
+  "basePath": "/user/v1",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/addNewUser": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "add a new userd details.",
+        "description": "add a new userd details.",
+        "operationId": "addNewUser",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addNewUserRequest",
+            "schema": {
+              "$ref": "#/definitions/AddNewUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No Output Body"
+          },
+          "400": {
+            "description": "error 400",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Bad Request",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "401": {
+            "description": "error 401",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Unauthorized",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "404": {
+            "description": "error 404",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Not Found",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "default": {
+            "description": "error 500",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180Z",
+                "status": "HTTP_STATS",
+                "error": "Internal Server Error",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/updateUser": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "update User details.",
+        "description": "update User details.",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateUserRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No Output Body"
+          },
+          "400": {
+            "description": "error 400",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Bad Request",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "401": {
+            "description": "error 401",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Unauthorized",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "404": {
+            "description": "error 404",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Not Found",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "default": {
+            "description": "error 500",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180Z",
+                "status": "HTTP_STATS",
+                "error": "Internal Server Error",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deleteUser": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "delete User details.",
+        "description": "delete User details.",
+        "operationId": "deleteUser",
+        "responses": {
+          "200": {
+            "description": "No Output Body, 200 is success"
+          },
+          "400": {
+            "description": "error 400",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Bad Request",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "401": {
+            "description": "error 401",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Unauthorized",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "404": {
+            "description": "error 404",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Not Found",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "default": {
+            "description": "error 500",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180Z",
+                "status": "HTTP_STATS",
+                "error": "Internal Server Error",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{userId}/getUserDetails": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Retrieve user info by userId.",
+        "description": "Retrieve user info by userId.",
+        "operationId": "getUserDetails",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "type": "string",
+            "required": true,
+            "description": "the userId."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON of RetrieveUserInfoRespond",
+            "schema": {
+              "$ref": "#/definitions/RetrieveUserInfoRespond"
+            }
+          },
+          "400": {
+            "description": "error 400",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Bad Request",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "401": {
+            "description": "error 401",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Unauthorized",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "404": {
+            "description": "error 404",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Not Found",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "default": {
+            "description": "error 500",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180Z",
+                "status": "HTTP_STATS",
+                "error": "Internal Server Error",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/retrieveUsersInfoByIds": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Retrieve Users Info By Ids.",
+        "description": "Retrieve Users Info By Ids.",
+        "operationId": "RetrieveUsersInfoByIds",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "RetrieveUsersInfoByIdsRequest",
+            "schema": {
+              "$ref": "#/definitions/RetrieveUsersInfoByIdsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON of RetrieveUsersInfosByIdsRespond",
+            "schema": {
+              "$ref": "#/definitions/RetrieveUsersInfosByIdsRespond"
+            }
+          },
+          "400": {
+            "description": "error 400",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Bad Request",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "401": {
+            "description": "error 401",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Unauthorized",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "404": {
+            "description": "error 404",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180+00:00",
+                "status": "HTTP_STATS",
+                "error": "Not Found",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          },
+          "default": {
+            "description": "error 500",
+            "schema": {
+              "example": {
+                "timestamp": "2021-05-23T22:22:04.180Z",
+                "status": "HTTP_STATS",
+                "error": "Internal Server Error",
+                "message": "ERROR_CODE",
+                "path": "/path"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "userDetails": {
+      "description": "User Details Object",
+      "type": "object",
+      "properties": {
+        "userName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "birthDate": {
+          "type": "string",
+          "minLength": 1,
+          "format": "date",
+          "maxLength": 50
+        },
+        "profilePictureUrl": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "AddNewUserRequest": {
+      "description": "The Add New User Request",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/userDetails"
+        }
+      ]
+    },
+    "UpdateUserRequest": {
+      "description": "The Update User Request",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/userDetails"
+        }
+      ]
+    },
+    "RetrieveUserInfoRespond": {
+      "description": "The Get User Info Request",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/userDetails"
+        }
+      ],
+      "properties": {
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "totalLikes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "RetrieveUsersInfoByIdsRequest": {
+      "description": "The Retrieve Users Info By Ids Request",
+      "type": "object",
+      "properties": {
+        "usersIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        }
+      }
+    },
+    "publicUserInfo": {
+      "description": "public User Info Object",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "userName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "profilePictureUrl": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "RetrieveUsersInfosByIdsRespond": {
+      "type": "object",
+      "properties": {
+        "usersDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/publicUserInfo"
+          }
+        }
+      }
+    }
+  }
+}
